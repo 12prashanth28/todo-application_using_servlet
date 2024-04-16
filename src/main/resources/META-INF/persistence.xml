@@ -14,7 +14,7 @@
 				value="jdbc:mysql://mytodo.c3ksyuu6g2i7.ap-south-1.rds.amazonaws.com:3306/mytodo?createDatabaseIfNotExist=true" />
 			<property name="javax.persistence.jdbc.user" value="admin" />
 			<property name="javax.persistence.jdbc.password"
-				value="rootadmin" />
+				value="Rootadmin" />
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.hbm2ddl.auto" value="update" />
 			<property name="hibernate.dialect"
