@@ -1,14 +1,15 @@
-# Use a base image with Java installed
-FROM openjdk:latest
+# Use a base image with Tomcat and Java installed
+FROM tomcat:latest
 
-# Set the working directory inside the container
-WORKDIR /app
+# Remove the default webapps directory
+RUN rm -rf /usr/local/tomcat/webapps/*
 
-# Copy the compiled Java application JAR file into the container
-COPY target/todo-app.jar /app/
+# Copy the WAR file into the webapps directory of Tomcat
+COPY target/todo-app.war /usr/local/tomcat/webapps/
 
-# Expose the port your Java application listens on
+# Expose the port your servlet application listens on
 EXPOSE 8080
 
-# Command to run your Java application
-CMD ["java", "-jar", "todo-app.jar"]
+# Start Tomcat server
+CMD ["catalina.sh", "run"]
+
